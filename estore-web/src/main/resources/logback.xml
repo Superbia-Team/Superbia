@@ -1,0 +1,39 @@
+<configuration>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>/tmp/badu/admin.log</file>
+		<encoder>
+			<pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.transaction" level="WARN" />
+	<logger name="org.springframework.security" level="WARN" />
+	<logger name="org.springframework.web" level="DEBUG" />
+	<logger name="org.tuckey" level="DEBUG" />
+
+	<!-- our service -->
+	<logger name="com.badu" level="DEBUG" />
+	<!-- <logger name="com.badu.core.repositories.BaduSessionMapper" level="DEBUG" /> -->
+	<logger name="com.badu.core.services.listeners" level="DEBUG" />
+	<logger name="com.badu.core.repositories" level="INFO" />
+	<logger name="com.badu.server.servlets" level="INFO" />
+	<logger name="com.badu.web.channel" level="DEBUG" />
+
+    <logger name="org.eclipse.jetty" level="INFO" />
+
+	<root level="WARN">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

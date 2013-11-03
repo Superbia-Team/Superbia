@@ -1,0 +1,13 @@
+target
+bin
+var
+.classpath
+.project
+.settings
+test-output
+.gradle
+.idea
+.jruby
+.sass-cache
+*.iml
+.nb-gradle

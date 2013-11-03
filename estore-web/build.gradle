@@ -1,0 +1,123 @@
+import org.gradle.plugins.compass.*
+
+apply plugin: 'war'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'compass'
+apply from: "coffeescript.gradle"
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'com.dm.estore.Main'
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+    }
+    dependencies {
+        classpath 'org.gradle.plugins:gradle-compass:1.0.9'
+    }
+}
+
+compass {
+    sassDir = file('src/main/sass')
+    cssDir = file('src/main/webapp/css')
+    imagesDir = file('src/main/webapp/images')
+    fontsDir = file('src/main/webapp/fonts')
+    javascriptsDir = file('src/main/webapp/js')
+}
+compileSass {
+    debugInfo = false
+    environment = 'production' // production, development
+    force = true
+    outputStyle = 'compressed' // nested, expanded, compact, compressed
+    relativeAssets = true
+}
+
+dependencies {
+    runtimeLibs(
+            // Embedded Jetty server
+            [group: 'org.eclipse.jetty', name : 'jetty-server', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-servlet', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-webapp', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-servlets', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-annotations', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-jmx', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-util', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-security', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-http', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty', name : 'jetty-io', version : ext.jettyVersion],
+
+            // Web sockets support
+            [group: 'org.eclipse.jetty.websocket', name : 'websocket-server', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty.websocket', name : 'websocket-servlet', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty.websocket', name : 'websocket-api', version : ext.jettyVersion],
+            [group: 'org.eclipse.jetty.websocket', name : 'websocket-common', version : ext.jettyVersion],
+
+            // Jersey REST web services
+            [group: 'com.sun.jersey', name : 'jersey-core', version : jerseyVersion],
+            [group: 'com.sun.jersey', name : 'jersey-server', version : jerseyVersion],
+            [group: 'com.sun.jersey', name : 'jersey-servlet', version : jerseyVersion],
+            [group: 'com.sun.jersey', name : 'jersey-json', version : jerseyVersion],
+            [group: 'com.fasterxml.jackson.jaxrs', name : 'jackson-jaxrs-json-provider', version : "2.2.3"],
+            [group: 'com.sun.jersey.contribs', name : 'jersey-spring', version : jerseyVersion],
+
+            [group: 'org.springframework', name : 'spring-web', version : ext.springVersion],
+            [group: 'org.springframework', name : 'spring-webmvc', version : ext.springVersion],
+
+            [group: 'org.hibernate', name : 'hibernate-validator', version : ext.hibernateVersion],
+
+            // Command line configuration + properties files configuration
+            [group: 'commons-cli', name : 'commons-cli', version : '1.2'],
+            [group: 'commons-configuration', name : 'commons-configuration', version : '1.9'],
+            [group: 'commons-beanutils', name : 'commons-beanutils', version : '1.8.3']
+    )
+
+    /*
+    compile(
+            [group: 'ro.isdc.wro4j', name : 'wro4j-extensions', version : '1.7.1']
+    )
+    */
+
+    testCompile(
+            [group: 'com.sun.jersey.jersey-test-framework', name : 'jersey-test-framework-core', version : jerseyVersion],
+            [group: 'com.sun.jersey.jersey-test-framework', name : 'jersey-test-framework-inmemory', version : jerseyVersion],
+            [group: 'com.sun.jersey', name : 'jersey-client', version : jerseyVersion],
+            [group: 'org.hsqldb', name : 'hsqldb', version : '2.2.9']
+    )
+}
+
+task compileCoffee(type: CompileCoffeeScript) {
+    srcDir = 'src/main/coffee'
+    outputDir = 'src/main/webapp/js/app'
+}
+
+task watch(dependsOn: [build, watchSass]) << {
+    println 'Watching for static resources ... press any button to stop'
+    System.console().readLine("\n")
+}
+
+processResources.inputs.files compileCoffee
+processResources.inputs.files compileSass
+clean.dependsOn cleanCompileSass
+clean.dependsOn cleanCompileCoffee
+
+/* Change context path (base url). otherwise defaults to name of project */
+jettyRunWar.contextPath = ''
+
+war {
+    from {
+        configurations.runtime.collect {
+            it.isDirectory() ? it : project.zipTree(it).matching {
+                exclude 'META-INF/*.SF'
+                exclude 'META-INF/*.DSA'
+                exclude 'META-INF/*.RSA'
+            }
+        }
+    }
+    from "$buildDir/classes/main"
+    from "$buildDir/resources/main"
+    manifest {
+        attributes 'Main-Class': 'com.badu.Main'
+    }
+}
