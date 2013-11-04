@@ -1,5 +1,6 @@
 package com.dm.estore.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,4 +16,7 @@ import org.springframework.context.annotation.Configuration;
 })
 public class ApplicationModule {
     // Declare "application" scope beans here (ie., beans that are not only used by the web context)
+
+    //@Bean
+    //public Configuration applicationConfiguration() { ... }
 }
