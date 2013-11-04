@@ -1,5 +1,5 @@
-# views supporint the book list application:  FWIW all views inherit from views/_base
-define ['underscore', 'pages/book/detail/templates', 'views/_base', 'msgbus' ], (_, Templates, AppViews, msgbus) ->
+# views supporint the book list application:  FWIW all views inherit from common/_viewsBase
+define ['underscore', 'pages/book/detail/templates', 'common/_viewsBase', 'msgbus' ], (_, Templates, AppViews, msgbus) ->
     # bookview
     BookDetail: class BookDetailView extends AppViews.ItemView
         template: _.template(Templates.bookdetail)

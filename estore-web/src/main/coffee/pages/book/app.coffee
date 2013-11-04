@@ -1,12 +1,12 @@
 # app/module
-define ["marionette", "pages/book/list/controller", "msgbus", "entities/book"], (Marionette, Controller, msgBus ) ->
+define ["marionette", "pages/book/list/controller", "msgbus", "common/entities/book"], (Marionette, Controller, msgBus ) ->
 
     msgBus.events.on "search:term", (searchTerm) ->
         Backbone.history.navigate "search/" + searchTerm
 
     defaultTerm = "West Highland Terrier"
 
-    #the book list application uses this PRIVATE books custom collection class as defined in the entities/book module (required above)
+    #the book list application uses this PRIVATE books custom collection class as defined in the common/entities/book module (required above)
     books = msgBus.reqres.request "book:entities"
 
     class Router extends Marionette.AppRouter

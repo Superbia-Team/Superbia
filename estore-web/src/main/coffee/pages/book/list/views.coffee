@@ -1,5 +1,5 @@
-# views supporing the book list application:  FWIW all views inherit from views/_base
-define ['backbone', 'pages/book/list/templates', 'views/_base', 'msgbus' ], (Backbone, Templates, AppView, msgBus) ->
+# views supporing the book list application:  FWIW all views inherit from common/_viewsBase
+define ['backbone', 'pages/book/list/templates', 'common/_viewsBase', 'msgbus' ], (Backbone, Templates, AppView, msgBus) ->
     # bookview
     BookView: class BookView extends AppView.ItemView
         template: _.template(Templates.book)

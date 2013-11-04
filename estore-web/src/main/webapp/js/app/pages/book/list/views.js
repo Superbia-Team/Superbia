@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['backbone', 'pages/book/list/templates', 'views/_base', 'msgbus'], function(Backbone, Templates, AppView, msgBus) {
+  define(['backbone', 'pages/book/list/templates', 'common/_viewsBase', 'msgbus'], function(Backbone, Templates, AppView, msgBus) {
     var BookDetailView, BookList, BookView, Layout, SearchView, _ref, _ref1, _ref2, _ref3, _ref4;
     return {
       BookView: BookView = (function(_super) {
