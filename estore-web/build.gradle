@@ -21,10 +21,10 @@ buildscript {
 
 compass {
     sassDir = file('src/main/sass')
-    cssDir = file('src/main/webapp/css')
+    cssDir = file('src/main/webapp/css/app')
     imagesDir = file('src/main/webapp/images')
     fontsDir = file('src/main/webapp/fonts')
-    javascriptsDir = file('src/main/webapp/js')
+    javascriptsDir = file('src/main/webapp/js/app')
 }
 compileSass {
     debugInfo = false
