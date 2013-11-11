@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>eStore</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Home page mock">
+	<meta name="author" content="Denis Morozov">
+	<link href="../estore-web/src/main/webapp/css/app/application.css" rel="stylesheet" type="text/css" />
+
+    <link href="main.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="../estore-web/src/main/webapp/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../estore-web/src/main/webapp/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../estore-web/src/main/webapp/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../estore-web/src/main/webapp/images/apple-touch-icon-114x114.png">
+
+    <style type="text/css">
+        .navbar-search {
+            margin-top: 10px;
+            z-index: 10000;
+        }
+
+        /* search form
+        -------------------------------------- */
+        .navbar-search {
+        display: inline-block;
+        zoom: 1; /* ie7 hack for display:inline-block */
+        *display: inline;
+        border: solid 1px #d2d2d2;
+        padding: 3px 5px;
+
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+        -moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+        box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+        background: #f1f1f1;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+        background: -moz-linear-gradient(top,  #fff,  #ededed);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+        -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+        }
+        .navbar-search input {
+        font: normal 12px/100% Arial, Helvetica, sans-serif;
+        }
+        .navbar-search .search-query {
+        background: #fff;
+        padding: 6px 6px 6px 8px;
+        width: 202px;
+        border: solid 1px #bcbbbb;
+        outline: none;
+
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+
+        -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+        }
+        .navbar-search .search-btn {
+        color: #fff;
+        border: solid 1px #494949;
+        font-size: 11px;
+        height: 27px;
+        width: 27px;
+        text-shadow: 0 1px 1px rgba(0,0,0,.6);
+
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+
+        background: #5f5f5f;
+        background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+        background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+        -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout-top-pane" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-3 logo">
+                        <a href="http://wbpreview.com/previews/WB0M3G9S1/index.html">
+                            <img alt="" src="logo.png">
+                        </a>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-4">
+                        <div class="row">
+                            <div class="col-xs-7"><div class="account"><a href="#myModal" role="button" data-toggle="modal">YOUR ACCOUNT</a><br>Welcome Jane Doe</div></div>
+                            <div class="col-xs-5"><div class="cart"><a href="http://wbpreview.com/previews/WB0M3G9S1/cart.html">SHOPPING CART</a><br>2 items</div></div>
+                        </div>
+
+                        <div class="row">
+                            <form class="navbar-search pull-right" action="">
+                                <input class="search-query span2" placeholder="Search" type="text">
+                                <input class="search-btn" type="button" value="Go" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Static navbar -->
+        <div class="navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">Project name</a>-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Coming Soon</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Handmade Jewelry</a></li>
+                    <li><a href="#">Antique & Vintage</a></li>
+                    <li><a href="#">Market findings</a></li>
+                    <li><a href="#">Sales & specials</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Categories</li>
+        </ol>
+
+    </div> <!-- /container -->
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="polaroid-images">
+                    <!--<a href="" title="Coming Soon"><img height="200" src="products/images1.jpg" alt="Coming Soon" title="Coming Soon" /></a>-->
+                    <a href="" title="New Arrivals"><img height="200" src="products/images2.jpg" alt="New Arrivals" title="New Arrivals" /></a>
+                    <a href="" title="Handmade Jewelry"><img height="200" src="products/images3.jpg" alt="Handmade Jewelry" title="Handmade Jewelry" /></a>
+                    <a href="" title="Antique & Vintage"><img height="200" src="products/images4.jpg" alt="Antique & Vintage" title="Antique & Vintage" /></a>
+                    <a href="" title="Market findings"><img height="200" src="products/images5.jpg" alt="Market findings" title="Market findings" /></a>
+                    <a href="" title="Sales & specials"><img height="200" src="products/images6.jpg" alt="Sales & specials" title="Sales & specials" /></a>
+                    <a href="" title="About Us"><img height="200" src="products/images7.jpg" alt="About Us" title="About Us" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2013 Delicate Diversity, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About</a></p>
+        </footer>
+    </div> <!-- /container -->
+
+    <script src="../estore-web/src/main/webapp/js/lib/jquery/jquery-2.0.3.min.js"></script>
+    <script src="../estore-web/src/main/webapp/js/lib/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

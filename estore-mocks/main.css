@@ -1,0 +1,171 @@
+body {
+    color: #333;
+    font-size: 2.4em;
+}
+
+* {
+    outline:none;
+}
+
+#layout-top-pane .navbar {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 20px;
+}
+#layout-top-pane .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+#layout-top-pane .navbar-search {
+    margin-right: 20px;
+}
+
+#layout-top-pane .navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.6em;
+}
+
+#layout-top-pane .nav > li > a:hover, .nav > li > a:focus {
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+.account {
+    border-right:1px solid #e8e8e8;
+    text-align:right;
+    padding-right: 20px;
+}
+
+.account,.cart {
+    margin-top: 10px;
+}
+
+.account a,.cart a {
+    font-weight: bold;
+    font-size: 0.9em;
+    display: block;
+}
+
+.logo img {
+    margin: 10px 0
+}
+
+.logo-title {
+    color: #8B8B8B;
+}
+
+.logo-title span {
+    color: #000;
+}
+
+.polaroid-images a {
+    background: #ffffff; /*fallback colour for browsers that don't support gradients*/
+    background: -webkit-linear-gradient(bottom, #ddd, #eee 20%, #f5f5f5 60%);
+    background: -moz-linear-gradient(bottom, #ddd, #eee 20%, #fff 60%);
+    background: -o-linear-gradient(bottom, #ddd, #eee 20%, #fff 60%);
+    background: -ms-linear-gradient(bottom, #ddd, #eee 20%, #fff 60%);
+    background: linear-gradient(bottom, #ddd, #eee 20%, #fff 60%);
+
+    display: inline;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 10px 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    transition: all .15s linear;
+    z-index:0;
+    position:relative;
+}
+
+.polaroid-images a:after {
+    color: #333;
+    font-size: 1.4em;
+    content: attr(title);
+    position: relative;
+    top:12px;
+}
+
+.polaroid-images img {
+    display: block;
+    width: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.polaroid-images a.slide1 {
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+
+.polaroid-images a.slide2 {
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+
+.polaroid-images a.slide3 {
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+
+.polaroid-images a.slide4 {
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+
+.polaroid-images a.slide5 {
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+}
+
+.polaroid-images a.slide6 {
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+
+.polaroid-images a:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    z-index:10;
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
+    box-shadow: 0 10px 20px rgba(0,0,0,.7);
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.divider {
+	background-image: url(divider.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 24px;
+	margin-bottom: 20px;
+
+	opacity:0.2;
+	filter:alpha(opacity=40);
+}

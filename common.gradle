@@ -109,6 +109,7 @@ task createFolders(description: 'Creates the source folders if they do not exist
 sourceSets {
     main {
         compileClasspath += configurations.provided + configurations.runtimeLibs
+        runtimeClasspath += configurations.runtimeLibs
     }
     test {
         compileClasspath += configurations.provided + configurations.runtimeLibs
@@ -131,6 +132,7 @@ idea {
         outputDir = file('target')
         scopes.COMPILE.plus += configurations.runtimeLibs
         scopes.COMPILE.plus += configurations.provided
+        scopes.RUNTIME.plus += configurations.runtimeLibs
         downloadJavadoc = true
         downloadSources = true
     }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>eStore</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Home page mock">
+	<meta name="author" content="Denis Morozov">
+	<link href="../estore-web/src/main/webapp/css/app/application.css" rel="stylesheet" type="text/css" />
+
+    <link href="main.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="../estore-web/src/main/webapp/images/favicon.ico">
+	<link rel="apple-touch-icon" href="../estore-web/src/main/webapp/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../estore-web/src/main/webapp/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../estore-web/src/main/webapp/images/apple-touch-icon-114x114.png">
+
+    <style type="text/css">
+        .search-query {
+            /*background: url(search-white.png) no-repeat 10px 6px #eee;*/
+            background: url(search-dark.png) no-repeat 10px 6px #eee;
+            border: 0 none;
+            font: normal 12px Arial,Helvetica,Sans-serif;
+            color: #777;
+            width: 200px;
+            padding: 6px 15px 6px 35px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            <!--text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);-->
+            -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+            -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+            -webkit-transition: all 0.7s ease 0s;
+            -moz-transition: all 0.7s ease 0s;
+            -o-transition: all 0.7s ease 0s;
+            transition: all 0.7s ease 0s;
+        }
+
+        .search-query:focus {
+            width: 220px;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-nav {
+                float:none;
+                margin: 0 auto;
+                display: table;
+                table-layout: fixed;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="layout-top-pane" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-3 logo">
+                        <a href="http://wbpreview.com/previews/WB0M3G9S1/index.html">
+                            <img alt="" src="logo.png">
+                        </a>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-4">
+                        <div class="row">
+                            <div class="col-xs-7"><div class="account"><a href="#myModal" role="button" data-toggle="modal">YOUR ACCOUNT</a>Welcome Jane Doe</div></div>
+                            <div class="col-xs-5"><div class="cart"><a href="http://wbpreview.com/previews/WB0M3G9S1/cart.html">SHOPPING CART</a>2 items</div></div>
+                        </div>
+
+                        <div class="row">
+                            <form class="navbar-search pull-right" action="">
+                                <input class="search-query span2" placeholder="Search" type="text">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Static navbar -->
+        <nav class="navbar" role="navigation">
+		<ul class="nav navbar-nav">
+		    <li><a href="#">New Arrivals</a></li>
+		    <li><a href="#">Handmade Jewelry</a></li>
+		    <li><a href="#">Antique & Vintage</a></li>
+		    <li><a href="#">Market findings</a></li>
+		    <li><a href="#">Sales & specials</a></li>
+		</ul>
+        </nav>
+
+	<ol class="breadcrumb">
+	    <li><a href="#">Home</a></li>
+	    <li class="active">Categories</li>
+	    <li class="pull-right"><a href="#">About Us</a></li>
+	</ol>
+
+    </div> <!-- /container -->
+
+    <div class="container content">
+	<nav class="navbar" role="navigation">
+		<ul class="nav navbar-nav polaroid-images">
+		    <li><a class="slide1" href="" title="New Arrivals"><img height="200" src="products/images2.jpg" alt="New Arrivals" title="New Arrivals" /></a></li>
+		    <li><a class="slide2" href="" title="Handmade Jewelry"><img height="200" src="products/DSC00761.JPG" alt="Handmade Jewelry" title="Handmade Jewelry" /></a></li>
+		    <li><a class="slide3" href="" title="Antique & Vintage"><img height="200" src="products/images4.jpg" alt="Antique & Vintage" title="Antique & Vintage" /></a></li>
+		</ul>
+	</nav>
+	<nav class="navbar" role="navigation">
+		<ul class="nav navbar-nav polaroid-images">
+		    <li><a class="slide4" href="" title="Market findings"><img height="200" src="products/DSC00751.JPG" alt="Market findings" title="Market findings" /></a></li>
+		    <li><a class="slide5" href="" title="Sales & specials"><img height="200" src="products/images6.jpg" alt="Sales & specials" title="Sales & specials" /></a></li>
+		    <li><a class="slide6" href="" title="About Us"><img height="200" src="products/images7.jpg" alt="About Us" title="About Us" /></a></li>
+		</ul>
+	</nav>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        <!-- <hr /> -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2013 Delicate Diversity, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">About</a></p>
+        </footer>
+    </div> <!-- /container -->
+
+    <script src="../estore-web/src/main/webapp/js/lib/jquery/jquery-2.0.3.min.js"></script>
+    <script src="../estore-web/src/main/webapp/js/lib/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

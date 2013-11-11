@@ -7,7 +7,7 @@ apply plugin: 'compass'
 apply from: "coffeescript.gradle"
 
 if (!hasProperty('mainClass')) {
-    ext.mainClass = 'com.dm.estore.Main'
+    ext.mainClass = 'com.dm.estore.MainIDE'
 }
 
 buildscript {

@@ -10,7 +10,7 @@
       'backbone.eventbinder': '../lib/backbone.eventbinder/backbone.eventbinder.min',
       'backbone.babysitter': '../lib/backbone.babysitter/backbone.babysitter.min',
       marionette: '../lib/marionette/backbone.marionette',
-      bootstrap: '../lib/bootstrap/js/bootstrap',
+      bootstrap: '../lib/bootstrap/bootstrap',
       text: '../lib/requirejs/text',
       templates: '../../templates'
     },

@@ -10,7 +10,7 @@ import com.dm.estore.server.WebServerConfig;
  */
 public class Main {
 
-    private WebServer server;
+    protected WebServer server;
 
     public static void main(String... anArgs) throws Exception {
         new Main().start();
