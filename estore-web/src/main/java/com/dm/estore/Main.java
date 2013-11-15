@@ -17,6 +17,7 @@ public class Main {
     }
 
     protected WebServer createWebServer() {
+        // TODO: load configuration from file
         server = new WebServer(WebServerConfig.Factory.newDevelopmentConfig(8080, "localhost"));
         server.setRunningInShadedJar(Boolean.TRUE);
         return server;
